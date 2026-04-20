@@ -5,10 +5,12 @@
 
 
 void block_signals(int sig) {
-    if (sig == SIGINT)
+    if (sig == SIGINT) {
         signal(sig, SIG_IGN);
-    else
+    }
+    else {
         fprintf(stdout, "NOT ctrl + c sigal recived!\n");
         exit(EXIT_SUCCESS);
+    }    
 }
 

@@ -27,6 +27,7 @@ dist:
 	tar -czf exchangeMatchingEngine.tar.gz $(SRC) $(HEADERS) Makefile README.md
 
 .PHONY: clean
+clean:
 	rm -f $(OBJ) $(TARGET) exchangeMatchingEngine.tar.gz
 
 .PHONY: help

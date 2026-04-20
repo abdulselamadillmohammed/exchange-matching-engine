@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
     
     // Testing signal handler
     signal(SIGINT, block_signals);
-    signal(SIGTERM, block_signals);
+    signal(SIGTSTP, block_signals);
 
     fprintf(stdout,"Starting the loop!\n");
     
@@ -21,5 +21,5 @@ int main(int argc, char **argv) {
         sleep(1);
     }
 
-    return EXIT_SUCESS;
+    return EXIT_SUCCESS;
 }

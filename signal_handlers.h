@@ -3,7 +3,7 @@
 
 
 // This is meant to block signals
-void block_signals();
+void block_signals(int sig);
 
 #endif
 
