@@ -1,0 +1,17 @@
+# Compiled objects
+*.o
+
+# Executables
+exchangeMatchingEngine
+a.out
+
+# Archives
+*.tar.gz
+
+# Mac system files
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~
