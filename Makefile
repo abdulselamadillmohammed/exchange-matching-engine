@@ -9,7 +9,8 @@ LIBS = -lm
 
 TARGET = exchangeMatchingEngine
 
-SRC = main.c
+SRC = main.c signal_handlers.c
+HEADERS = signal_handlers.h
 OBJ = $(SRC:.c=.o)
 
 #Default
@@ -21,20 +22,19 @@ $(TARGET): $(OBJ)
 %o: %c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-
-.PHONY
+.PHONY: dist
 dist:
-	# includes the source files and Makefilee
-	tar -czf monitor.tar.gz $(SRC) Makefile
+	tar -czf exchangeMatchingEngine.tar.gz $(SRC) $(HEADERS) Makefile README.md
 
-.PHONY
-clean:
-	rm -f $(OBJ) $(TARGET)
+.PHONY: clean
+	rm -f $(OBJ) $(TARGET) exchangeMatchingEngine.tar.gz
 
-.PHONY
+.PHONY: help
 help:
-	@echo "Available"
-	@echo "make       - compiles the project"
-	@echo "make clean - cleans the dir"
-	@echo "make help  - outputs this command"
-	@echo "make dist  - packages the project"
+	@echo "Available commands:"
+	@echo "make       - builds the project"
+	@echo "make clean - remove object files and executable"
+	@echo "make dist  - package source files"
+	@echo "make help  - prints this command"
+
+
